@@ -31,6 +31,9 @@ class AddDefaultUserAccount extends Migration
     {
         $user = \App\User::where('email', env("DEFAULT_EMAIL", "email@example.com"))->first();
 
-        $user->delete();
+        if (!is_null($user)) {
+            $user->delete();
+        }
+
     }
 }
