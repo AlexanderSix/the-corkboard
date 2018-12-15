@@ -15,7 +15,11 @@ class CreateResponsesTable extends Migration
     {
         Schema::create('responses', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('message_id');
+            $table->text('message');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
