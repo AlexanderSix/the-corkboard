@@ -1,1 +1,3 @@
 TODO: Add a "leader_id" field to the Team model (make new migration first)
+
+TODO: Refactor Factories to not have to store Users / Messages in the DB (use make() instead of create())
