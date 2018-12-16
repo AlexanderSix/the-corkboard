@@ -13,7 +13,7 @@ class AddDefaultUserAccount extends Migration
      */
     public function up()
     {
-        $user = new \App\User();
+        $user = new \App\User;
         $user->name = env("DEFAULT_USER_NAME", "Default Name");
         $user->email = env("DEFAULT_EMAIL", "email@example.com");
         $user->email_verified_at = now();
