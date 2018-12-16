@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -25,7 +25,7 @@ class UserServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             'App\Services\Contracts\UserServiceInterface',
-            'App\Services\UserServiceProvider'
+            'App\Services\UserService'
         );
     }
 }

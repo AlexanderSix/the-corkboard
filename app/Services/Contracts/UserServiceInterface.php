@@ -9,7 +9,12 @@
 namespace App\Services\Contracts;
 
 
+use App\User;
+use Illuminate\Support\Collection;
+
 interface UserServiceInterface
 {
-
+    public function all (): Collection;
+    public function find (int $id): User;
+    public function teammates ($id): Collection;
 }
