@@ -9,9 +9,7 @@
 namespace App\Repositories;
 
 
-use App\Repositories\Contracts\MessageRepositoryInterface;
-
-class MessageRepository implements MessageRepositoryInterface
+class MessageRepository
 {
 
 }

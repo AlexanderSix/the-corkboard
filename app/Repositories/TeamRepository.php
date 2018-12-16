@@ -9,9 +9,7 @@
 namespace App\Repositories;
 
 
-use App\Repositories\Contracts\TeamRepositoryInterface;
-
-class TeamRepository implements TeamRepositoryInterface
+class TeamRepository
 {
 
 }

@@ -9,32 +9,7 @@
 namespace App\Repositories\Providers;
 
 
-use Illuminate\Support\ServiceProvider;
-
-class MessageRepositoryServiceProvider extends ServiceProvider
+class MessageRepositoryServiceProvider
 {
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
 
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->app->bind(
-            'App\Repositories\Contracts\MessageRepositoryInterface',
-            // To change the data source, replace this class name
-            // with another implementation
-            'App\Repositories\MessageRepository'
-        );
-    }
 }

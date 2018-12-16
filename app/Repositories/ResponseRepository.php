@@ -9,9 +9,7 @@
 namespace App\Repositories;
 
 
-use App\Repositories\Contracts\ResponseRepositoryInterface;
-
-class ResponseRepository implements ResponseRepositoryInterface
+class ResponseRepository
 {
 
 }
