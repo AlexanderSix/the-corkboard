@@ -9,7 +9,32 @@
 namespace App\Repositories\Providers;
 
 
-class ResponseRepositoryServiceProvider
-{
+use Illuminate\Support\ServiceProvider;
 
+class ResponseRepositoryServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\ResponseRepositoryInterface',
+            // To change the data source, replace this class name
+            // with another implementation
+            'App\Repositories\ResponseRepository'
+        );
+    }
 }

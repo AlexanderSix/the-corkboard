@@ -173,6 +173,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        App\Repositories\Providers\MessageRepositoryServiceProvider::class,
+        App\Repositories\Providers\TeamRepositoryServiceProvider::class,
+        App\Repositories\Providers\ResponseRepositoryServiceProvider::class,
+        App\Repositories\Providers\UserRepositoryServiceProvider::class
 
     ],
 

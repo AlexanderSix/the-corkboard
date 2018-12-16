@@ -9,7 +9,32 @@
 namespace App\Repositories\Providers;
 
 
-class TeamRepositoryServiceProvider
-{
+use Illuminate\Support\ServiceProvider;
 
+class TeamRepositoryServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind(
+            'App\Repositories\Contracts\TeamRepositoryInterface',
+            // To change the data source, replace this class name
+            // with another implementation
+            'App\Repositories\TeamRepository'
+        );
+    }
 }

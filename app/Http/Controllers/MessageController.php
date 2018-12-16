@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\Repositories\Contracts\MessageRepositoryInterface;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+    protected $messageRepository;
+
+    public function __construct (MessageRepositoryInterface $messageRepository)
+    {
+        $this->messageRepository = $messageRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *

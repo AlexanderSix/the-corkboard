@@ -9,7 +9,9 @@
 namespace App\Repositories;
 
 
-class UserRepository
+use App\Repositories\Contracts\UserRepositoryInterface;
+
+class UserRepository implements UserRepositoryInterface
 {
 
 }

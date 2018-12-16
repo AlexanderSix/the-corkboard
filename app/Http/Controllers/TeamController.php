@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Contracts\TeamRepositoryInterface;
 use App\Team;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
+    protected $teamRepository;
+
+    public function __construct (TeamRepositoryInterface $teamRepository)
+    {
+        $this->teamRepository = $teamRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *

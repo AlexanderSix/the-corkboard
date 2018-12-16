@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Contracts\ResponseRepositoryInterface;
 use App\Response;
 use Illuminate\Http\Request;
 
 class ResponseController extends Controller
 {
+    protected $responseRepository;
+
+    public function __construct (ResponseRepositoryInterface $responseRepository)
+    {
+        $this->responseRepository = $responseRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
