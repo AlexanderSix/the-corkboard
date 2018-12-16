@@ -1,0 +1,1 @@
+TODO: Add a "leader_id" field to the Team model (make new migration first)
