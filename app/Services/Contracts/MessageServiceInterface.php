@@ -9,7 +9,12 @@
 namespace App\Services\Contracts;
 
 
+use App\Message;
+use Illuminate\Support\Collection;
+
 interface MessageServiceInterface
 {
-
+    public function all () : Collection;
+    public function find ($id) : Message;
+    public function byUser ($userId) : Collection;
 }

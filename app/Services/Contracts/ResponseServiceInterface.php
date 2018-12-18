@@ -9,7 +9,12 @@
 namespace App\Services\Contracts;
 
 
+use App\Response;
+use Illuminate\Support\Collection;
+
 interface ResponseServiceInterface
 {
-
+    public function all () : Collection;
+    public function find ($id) : Response;
+    public function byMessage ($messageId) : Collection;
 }

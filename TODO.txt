@@ -1,3 +1,5 @@
-TODO: Add a "leader_id" field to the Team model (make new migration first)
-
 TODO: Refactor Factories to not have to store Users / Messages in the DB (use make() instead of create())
+
+TODO: Make tests more general by mocking the Service Providers for the Model Services rather than just testing the Model Service directly
+
+TODO: *** MAKE SURE ALL TESTS USE REFRESH DATABASE TRAIT ***

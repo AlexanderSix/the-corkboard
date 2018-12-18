@@ -2,6 +2,9 @@
 
 namespace Tests\Unit;
 
+use App\Services\UserService;
+use Illuminate\Support\Collection;
+use Illuminate\Support\ServiceProvider;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -10,10 +13,24 @@ class UserServiceTest extends TestCase
 {
     use RefreshDatabase;
 
+    /**
+     * @var UserService
+     */
     protected $userService;
 
+    /**
+     * @var Collection
+     */
     protected $team1Users;
+
+    /**
+     * @var Collection
+     */
     protected $users;
+
+    /**
+     * @var Collection
+     */
     protected $teams;
 
     public function setUp ()

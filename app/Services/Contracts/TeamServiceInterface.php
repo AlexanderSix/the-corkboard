@@ -9,7 +9,12 @@
 namespace App\Services\Contracts;
 
 
+use App\Team;
+use Illuminate\Support\Collection;
+
 interface TeamServiceInterface
 {
-
+    public function all () : Collection;
+    public function find (int $id) : Team;
+    public function members (int $id) : Collection;
 }
