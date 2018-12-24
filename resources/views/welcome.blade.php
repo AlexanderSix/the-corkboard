@@ -157,6 +157,28 @@
             .message-content {
                 text-align: left;
             }
+
+            section.chart-section {
+                color: hsl(210, 24%, 16%);
+                padding-top: 15vh;
+            }
+
+            .chart-container {
+                height: auto;
+                width: 90%;
+            }
+
+            .footer {
+                background-color: hsl(204, 96%, 27%);
+                color: hsl(195, 100%, 95%);
+
+                /*background-color: #035287;*/
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%231991d2' fill-opacity='0.21'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+
+            .footer * {
+                color: hsl(195, 100%, 95%);
+            }
         </style>
     </head>
     <body>
@@ -260,6 +282,74 @@
             </div>
         </section>
 
+        <section class="section chart-section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h4 class="title is-size-3-mobile is-size-1-tablet">Increase Productivity</h4>
+                        <p>Teams using Corkboards have said that their team's productivity has
+                            increased dramatically since starting to use their Corkboards. As a matter of
+                            fact, teams using Corkboards area saying that if they were to stop using Corkboards,
+                            they wouldn't be able to function any more due to a loss of productivity!</p>
+                    </div>
+                    <div class="column">
+                        <div class="chart-container">
+                            <canvas id="productivity-chart" height="400px" width="600px"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section chart-section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <div class="chart-container">
+                            <canvas id="cork-chart" height="400px" width="600px"></canvas>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h4 class="title is-size-3-mobile is-size-1-tablet">More Cork = More Benefits</h4>
+                        <p>It's not just our teams who are saying great things about Corkboard! The
+                        Scientific Journal of Science has officially backed up our claims, and you
+                        don't even need a team to reap the benefits! Science has proven time and time
+                        again that more cork is the key for a happier, more fulfilling life, and what
+                        a better place to get more cork than Corkboard! We have 100% more cork than
+                        any of our leading competitors!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h5 class="title is-size-5-mobile is-size-3-tablet">The Corkboard</h5>
+                    </div>
+                    <div class="column">
+                        <p style="text-align: center; font-weight: 600;">&copy; Alexander Six 2016</p>
+                    </div>
+                    <div class="column">
+                        @if (Route::has('login'))
+                            <div class="top-right links">
+                                @auth
+                                    <a href="{{ url('/home') }}">Home</a>
+                                @else
+                                    <a href="{{ route('login') }}">Login</a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}">Register</a>
+                                    @endif
+                                @endauth
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </footer>
+
         {{--<div class="flex-center position-ref full-height">--}}
             {{--@if (Route::has('login'))--}}
                 {{--<div class="top-right links">--}}
@@ -283,5 +373,77 @@
 
             {{--</div>--}}
         {{--</div>--}}
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        var chartCanvas = document.getElementById('productivity-chart');
+        var chart = new Chart(chartCanvas, {
+            type: 'line',
+            data: {
+                datasets: [
+                    {
+                        label: "Red Team",
+                        data: [0, 8, 18, 30, 44, 64, 100],
+                        backgroundColor: 'hsla(354, 85%, 44%, 0.25)',
+                        borderColor: 'hsl(354, 85%, 44%)'
+                    },
+                    {
+                        label: "Blue Team",
+                        data: [0, 2, 13, 29, 40, 72, 94],
+                        backgroundColor: 'hsla(201, 79%, 46%, 0.25)',
+                        borderColor: 'hsl(201, 79%, 46%)'
+                    },
+                    {
+                        label: "Orange Team (stopped using Corkboard)",
+                        data: [100, 75, 20, 0, 0, 0, 0],
+                        backgroundColor: 'hsla(29, 80%, 44%, 0.25)',
+                        borderColor: 'hsl(29, 80%, 44%)'
+                    }
+                ],
+                labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"]
+            },
+            options: {
+                xAxisId: 'Time Using Corkboards (days)',
+                yAxisId: 'Productivity',
+                backgroundColor: 'hsl(216, 33, 97)',
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var corkChartCanvas = document.getElementById('cork-chart');
+        var corkChart = new Chart(corkChartCanvas,{
+            type: 'bar',
+            data: {
+                datasets: [
+                    {
+                        label: "Amount of Cork",
+                        data: [100, 1, 1, 1],
+                        backgroundColor: 'hsla(322, 93%, 27%, 0.25)',
+                        borderColor: 'hsl(322, 93%, 27%)'
+                    }
+                ],
+                labels: ["The Corkboard", "Slack", "Reddit", "Other"]
+            },
+            options: {
+                xAxisId: 'Messaging Applications',
+                yAxisId: 'Amount of Cork',
+                backgroundColor: 'hsl(216, 33, 97)',
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        })
+
+    </script>
     </body>
 </html>
