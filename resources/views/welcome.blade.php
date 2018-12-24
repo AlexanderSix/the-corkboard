@@ -143,6 +143,20 @@
             .box.about {
                 margin-top: -100px;
             }
+
+            .profile-image {
+                border-radius: 64px;
+                border: 1px solid hsla(210, 16%, 82%, 1.0)
+            }
+
+            .message-content-subject {
+                font-weight: 600;
+                text-align: left;
+            }
+
+            .message-content {
+                text-align: left;
+            }
         </style>
     </head>
     <body>
@@ -197,12 +211,47 @@
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image is-64">
-                                    <img src="https://bulma.io/images/placeholders/64x64.png" alt="Profile Picture" />
+                                    {{--<img src="https://bulma.io/images/placeholders/64x64.png" alt="Profile Picture" />--}}
+                                    <img class="profile-image" src="{{ asset('storage/images/profile/01w.jpg') }}" alt="Profile Picture" />
                                 </figure>
                             </div>
                             <div class="media-content">
                                 <div class="content">
+                                    <h4 class="message-content-subject">Pin messages to the Corkboard for everyone to see, or pin messages that only your team can see!</h4>
+                                    <hr>
+                                    <p class="message-content">Messages are a great way to share a lot of information quickly, whether you're inviting everyone to the next company party or discussing team-based trade secrets!</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
 
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-64">
+                                    <img class="profile-image" src="{{ asset('storage/images/profile/02m.jpg') }}" alt="Profile Picture" />
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p class="message-content">Once you've posted a message, anyone who can see your message can create and post a response! This is a great way to encourage team engagement!</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-64">
+                                    <img class="profile-image" src="{{ asset('storage/images/profile/03w.jpg') }}" alt="Profile Picture" />
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p class="message-content">
+                                        With the Corkboard, the possibilities are endless! The Corkboard will change the way that your team communicates!
+                                    </p>
                                 </div>
                             </div>
                         </article>

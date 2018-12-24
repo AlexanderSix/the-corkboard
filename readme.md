@@ -34,11 +34,14 @@ docker-compose up --build -d
 # If you run in the background, you can see the logs with:
 docker-compose logs -f
 
-# Migrate the database in the container
+# "Shell" into the app container
 docker-compose run --rm app /bin/bash
 
-# Now inside the container
+# Now inside the container, migrate the database
 php artisan migrate
+
+# Also, symlink the storage directory into the public directory
+php artisan storage:link
 ```
 
 ## Connecting to the Database
