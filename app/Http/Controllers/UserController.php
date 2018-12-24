@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Response;
 use App\Services\Contracts\UserServiceInterface;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    /**
+     * @var UserService
+     */
     protected $userService;
 
     public function __construct (UserServiceInterface $userService)
     {
-        $this->$userService = $userService;
+        $this->userService = $userService;
     }
 
     /**
@@ -53,7 +58,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = $this->userService->find($id);
+
+        return view('user.profile')->with(['user' => $user]);
     }
 
     /**
