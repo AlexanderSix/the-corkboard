@@ -31,5 +31,8 @@ files.keys().map(key => {
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    props: {
+        csrf: window.csrfToken
+    }
 });
