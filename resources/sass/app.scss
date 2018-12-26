@@ -4,12 +4,11 @@
 
 // Variables
 @import 'variables';
+@import 'styles';
 
-// Bootstrap
-//@import '~bootstrap/scss/bootstrap';
 @import '~bulma/bulma';
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: $gray-1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }

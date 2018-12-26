@@ -129,7 +129,7 @@
                 font-weight: 600;
                 margin-top: 3vh;
 
-                transition: background-color 400ms ease-in-out;
+                transition: background-color 150ms ease-in-out;
             }
 
             .button.is-large:hover {

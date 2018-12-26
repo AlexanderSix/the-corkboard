@@ -1,6 +1,69 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8 is-offset-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <header class="card-header-title">
+                                <p>{{ __('Register') }}</p>
+                            </header>
+                        </div>
+
+                        <div class="card-content">
+                            <form action="{{ route('register') }}" method="POST">
+                                <div class="field">
+                                    <label for="name" class="label">{{ __('Name') }}</label>
+                                    <div class="control">
+                                        <input type="text" class="input{{ $errors->has('name') ? ' is-danger' : '' }}" placeholder="Name" name="name" value="{{ old('name') }}" required autofocus>
+
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label for="email" class="label">{{ __('E-Mail Address') }}</label>
+                                    <div class="control">
+
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label for="password" class="label">{{ __('Password') }}</label>
+                                    <div class="control">
+
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label for="password-confirm" class="label">{{ __('Confirm Password') }}</label>
+                                    <div class="control">
+
+                                    </div>
+                                </div>
+
+
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-link" type="submit">{{ __('Register') }}</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
