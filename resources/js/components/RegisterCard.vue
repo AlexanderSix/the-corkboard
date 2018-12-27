@@ -1,11 +1,5 @@
 <template>
     <div class="card">
-        <div class="card-header">
-            <header class="card-header-title">
-                <p>Register PLZ</p>
-            </header>
-        </div>
-
         <div class="card-content">
             <form :action="submitRoute" method="POST">
                 <input type="hidden" name="_token" :value="csrf" />
@@ -17,7 +11,6 @@
                                type="text"
                                class="input"
                                :class="(hasError('name')) ? ' is-danger' : ''"
-                               placeholder="Name"
                                name="name"
                                :value="getOldValue('name')"
                                required autofocus
@@ -35,7 +28,6 @@
                                type="email"
                                class="input"
                                :class="(hasError('email')) ? ' is-danger' : ''"
-                               placeholder="Email"
                                name="email"
                                :value="getOldValue('email')"
                                required
@@ -54,7 +46,6 @@
                                type="password"
                                class="input"
                                :class="(hasError('password')) ? ' is-danger' : ''"
-                               placeholder="Password"
                                name="password"
                                required
                         >
@@ -73,7 +64,6 @@
                                type="password"
                                class="input"
                                :class="(hasError('password-confirm')) ? ' is-danger' : ''"
-                               placeholder="Confirm Password"
                                name="password-confirm"
                                required
                         >
@@ -83,7 +73,7 @@
 
                 <div class="field">
                     <div class="control">
-                        <button class="button is-link" type="submit">Register</button>
+                        <button class="button is-link is-fullwidth" type="submit">Register</button>
                     </div>
                 </div>
             </form>
@@ -141,7 +131,32 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../../sass/variables';
+
+.card {
+    background-color: $gray-1000;
+    border-radius: 15px;
+}
+
 .field {
     margin-bottom: 25px;
+}
+
+input.input {
+    height: 50px;
+}
+
+button.button {
+    background-color: $pink-300;
+    border-radius: 10px;
+
+    height: 50px;
+
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        background-color: $pink-700;
+        color: $gray-100;
+    }
 }
 </style>

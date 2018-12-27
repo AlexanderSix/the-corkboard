@@ -5,6 +5,22 @@
     <div class="section register-section">
         <div class="container">
             <div class="columns">
+                <div class="column title-column">
+                    {{-- This is a prime place to make
+                         a component, if you're going to
+                         be reusing this sort of text styling--}}
+                    <h1 class="title is-size-3-mobile is-size-1-tablet">Create an Account!</h1>
+                    <p>Come join us on the corky side of life! And bring
+                    your friends too! The Corkboard is always more fun with
+                    a team, and cork is the best gift to share with those you
+                    love (or even just those who you work with).</p>
+
+                    <h3 class="title is-size-3-tablet is-hidden-mobile is-hidden-tablet-only">Already have an account?</h3>
+                    <div class="align-button-container">
+                        <a href="{{ route('login') }}" class="button is-large is-hidden-mobile is-hidden-tablet-only">Login</a>
+                    </div>
+                </div>
+
                 <div class="column">
                     <register-card
                         errors="{{ (empty($errors)) ? new stdClass() : $errors }}"
@@ -13,80 +29,13 @@
                     ></register-card>
                 </div>
 
-                <div class="column">
-                    <div class="card register-card">
-                        <div class="card-header">
-                            <header class="card-header-title">
-                                <p>{{ __('Register') }}</p>
-                            </header>
-                        </div>
-
-                        <div class="card-content">
-                            {{--<form action="{{ route('register') }}" method="POST">--}}
-                                {{--<div class="field">--}}
-                                    {{--<label for="name" class="label">{{ __('Name') }}</label>--}}
-                                    {{--<div class="control">--}}
-                                        {{--<input id="name" type="text" class="input{{ $errors->has('name') ? ' is-danger' : '' }}" placeholder="Name" name="name" value="{{ old('name') }}" required autofocus>--}}
-
-                                        {{--@if ($errors->has('name'))--}}
-                                            {{--<span class="invalid-feedback" role="alert">--}}
-                                                {{--<strong>{{ $errors->first('name') }}</strong>--}}
-                                            {{--</span>--}}
-                                        {{--@endif--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-                                {{--<div class="field">--}}
-                                    {{--<label for="email" class="label">{{ __('E-Mail Address') }}</label>--}}
-                                    {{--<div class="control">--}}
-                                        {{--<input id="email" type="email" class="input{{ $errors->has('email') ? ' is-danger' : '' }}" placeholder="Email" name="email" value="{{ old('email') }}" required>--}}
-
-                                        {{--@if ($errors->has('email'))--}}
-                                            {{--<span class="invalid-feedback" role="alert">--}}
-                                                {{--<strong>{{ $errors->first('email') }}</strong>--}}
-                                            {{--</span>--}}
-                                        {{--@endif--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-                                {{--<div class="field">--}}
-                                    {{--<label for="password" class="label">{{ __('Password') }}</label>--}}
-                                    {{--<div class="control">--}}
-                                        {{--<input id="password" type="password" class="input{{ $errors->has('password') ? ' is-danger' : '' }}" placeholder="Password" name="password" required>--}}
-
-                                        {{--@if ($errors->has('password'))--}}
-                                            {{--<span class="invalid-feedback" role="alert">--}}
-                                                {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                            {{--</span>--}}
-                                        {{--@endif--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-                                {{--<div class="field">--}}
-                                    {{--<label for="password-confirm" class="label">{{ __('Confirm Password') }}</label>--}}
-                                    {{--<div class="control">--}}
-                                        {{--<input id="password-confirm" type="password" class="input{{ $errors->has('password-confirm') ? ' is-danger' : '' }}" placeholder="Confirm Password" name="password-confirm" required>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-
-                                {{--<div class="field">--}}
-                                    {{--<div class="control">--}}
-                                        {{--<button class="button is-link" type="submit">{{ __('Register') }}</button>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-
-                            {{--</form>--}}
-                        </div>
+                <div class="column title-column is-hidden-desktop">
+                    <h3 class="title is-size-5-mobile mobile-to-login">Already have an account?</h3>
+                    <div class="align-button-container">
+                        <a href="{{ route('login') }}" class="button is-large">Login</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-{{--<script>--}}
-    {{--import RegisterCard from "../../js/components/RegisterCard";--}}
-    {{--export default {--}}
-        {{--components: {RegisterCard}--}}
-    {{--}--}}
-{{--</script>--}}
