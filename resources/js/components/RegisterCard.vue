@@ -1,7 +1,9 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <p>Register PLZ</p>
+            <header class="card-header-title">
+                <p>Register PLZ</p>
+            </header>
         </div>
 
         <div class="card-content">
@@ -20,10 +22,9 @@
                                :value="getOldValue('name')"
                                required autofocus
                         >
-                        {{ errors }}
-                        <span v-if="hasError('name')" class="invalid-feedback" role="alert">
-                            <strong>{{ getError('name') }}</strong>
-                        </span>
+                        <div class="tags are-medium">
+                            <span class="tag is-danger" v-for="message in getError('name')">{{ message }}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -40,9 +41,9 @@
                                required
                         >
 
-                        <span v-if="hasError('email')" class="invalid-feedback" role="alert">
-                            <strong>{{ getError('email') }}</strong>
-                        </span>
+                        <div class="tags are-medium">
+                            <span class="tag is-danger" v-for="message in getError('email')">{{ message }}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -58,9 +59,9 @@
                                required
                         >
 
-                        <span v-if="hasError('password')" class="invalid-feedback" role="alert">
-                            <strong>{{ getError('password') }}</strong>
-                        </span>
+                        <div class="tags are-medium">
+                            <span class="tag is-danger" v-for="message in getError('password')">{{ message }}</span>
+                        </div>
 
                     </div>
                 </div>
@@ -100,6 +101,9 @@
             },
             decodedErrors() {
                 return JSON.parse(this.errors)
+            },
+            decodedOldValues() {
+                return JSON.parse(this.oldValues)
             }
         },
         methods: {
@@ -121,8 +125,8 @@
                 return null
             },
             getOldValue(key) {
-                if (typeof this.oldValues !== 'undefined') {
-                    return this.oldValues[key]
+                if (typeof this.decodedOldValues !== 'undefined') {
+                    return this.decodedOldValues[key]
                 } else {
                     return null
                 }
@@ -137,5 +141,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.field {
+    margin-bottom: 25px;
+}
 </style>

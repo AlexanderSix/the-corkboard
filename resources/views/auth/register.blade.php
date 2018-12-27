@@ -8,7 +8,9 @@
                 <div class="column">
                     <register-card
                         errors="{{ (empty($errors)) ? new stdClass() : $errors }}"
-                    />
+                        submit-route="{{ route('register') }}"
+                        old-values="{{ json_encode(['name' => old('name'), 'email' => old('email')]) }}"
+                    ></register-card>
                 </div>
 
                 <div class="column">
