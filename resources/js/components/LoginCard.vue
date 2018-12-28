@@ -42,7 +42,7 @@
 
                 <div class="field">
                     <div class="control">
-                        <button class="button is-link is-fullwidth" type="submit">Register</button>
+                        <button class="button is-link is-fullwidth" type="submit">Login</button>
                     </div>
                 </div>
 
