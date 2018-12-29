@@ -119,6 +119,11 @@ button.button {
 
     height: 50px;
 
-    transition: all
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        background-color: $pink-700;
+        color: $gray-100;
+    }
 }
 </style>
