@@ -16,7 +16,7 @@
 
                     <h3 class="title is-size-3-tablet is-hidden-mobile is-hidden-tablet-only">Don't have an account?</h3>
                     <div class="align-button-container">
-                        <a href="{{ route('login') }}" class="button is-large is-hidden-mobile is-hidden-tablet-only">Sign Up</a>
+                        <a href="{{ route('register') }}" class="button is-large is-hidden-mobile is-hidden-tablet-only">Sign Up</a>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@
                 <div class="column title-column is-hidden-desktop">
                     <h3 class="title is-size-5-mobile mobile-to-login">Don't have an account?</h3>
                     <div class="align-button-container">
-                        <a href="{{ route('login') }}" class="button is-large">Sign Up</a>
+                        <a href="{{ route('register') }}" class="button is-large">Sign Up</a>
                     </div>
                 </div>
             </div>
