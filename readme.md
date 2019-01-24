@@ -6,6 +6,37 @@ A Laravel starter project for Docker using Nginx and PHP-FPM. This project is an
 
 To start using this project, there are a few setup steps that you need to take which include things like composer installation and setting up env files.
 
+Before you start, you'll need to make sure that you've installed a few things
+on your machine:
+
+* PHP (at least version 7.1)
+* Composer (getcomposer.org)
+* NPM (`sudo apt-get install nodejs npm` for Ubuntu users)
+
+### How to install Ubuntu:
+
+The following commands will download php7.2 for all Ubuntu users. If you are
+using a different OS, give it a quick Google search and you'll find lots of
+ways to install it:
+
+```
+sudo apt-get install software-properties-common python-software-properties
+
+# Update your apt repository to include the newest PHP repositories
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt-get update
+
+# Install PHP 7.2
+sudo apt-get install php7.2 php7.2-cli php7.2-common
+
+# Install most commonly used PHP extensions
+sudo apt-get install php7.2-curl php7.2-gd php7.2-json php7.2-mbstring php7.2-intl php7.2-mysql php7.2-xml php7.2-zip
+
+# Check your PHP version!
+php -v
+
+```
+
 Here's the commands you need to run to get going:
 
 ```
